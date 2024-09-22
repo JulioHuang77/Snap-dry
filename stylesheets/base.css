@@ -20,16 +20,26 @@
 	q:before, q:after {
 		content: '';
 		content: none; }
+	a {
+		text-decoration: none;
+	}
 	table {
 		border-collapse: collapse;
 		border-spacing: 0; }
 	::selection {
-    background: #1b6fea;
+    background: #FA494C;
     color: #fff;
 }	
 	::-moz-selection {
-    background: #1b6fea;
+    background: #FA494C;
     color: #fff;
+}
+
+@font-face {
+	font-family: 'OpenHuninn';
+	src: url('../fonts/jf-openhuninn-2.0.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
 }
 
 
@@ -37,46 +47,42 @@
 ================================================== */
 	body {
 		background: #fff;
-		font: 16px/26px 'Noto Sans TC', 'Istok Web', 'HelveticaNeue', 'Helvetica Neue', '微軟正黑體', Helvetica, Arial, sans-serif;
-		color: #333;
+		font: 16px/26px 'OpenHuninn', 'Noto Sans TC', 'Istok Web', 'HelveticaNeue', 'Helvetica Neue', '微軟正黑體', Helvetica, Arial, sans-serif;
+		color: #39394A;
 		-webkit-font-smoothing: antialiased; /* Fix for webkit rendering */
 		-webkit-text-size-adjust: 100%;
  	}
- 	.grey { background: #eee; }
- 	.blue { background: #1b6fea; }
- 	.light-blue { background: #498cee; }
+ 	.grey { background: #F5F7FA; }
 
- 	.article {padding-left: 10px; }
+ 	.article {display: flex; flex-direction: column; gap: 20px; }
+	.container-section {padding-top: 80px; padding-bottom: 80px; }
 
- 	.header { background: #1b6fea; position: relative; width: 100%; margin: 0 auto; padding: 0; }
- 	.product { background: #eee; position: relative; width: 100%; margin: 0 auto; padding: 0; }
- 	.contact { background: #498cee; position: relative; width: 100%; margin: 0 auto; padding: 0; }
+ 	.header { background: #FA494C; position: relative; width: 100%; margin: 0 auto; padding: 0; }
+ 	.product { background: #F5F7FA; position: relative; width: 100%; margin: 0 auto; padding: 0; }
 
 
 /* #Typography
 ================================================== */
 	h1, h2, h3, h4, h5, h6 {
-		color: #414141;
-		font-family: 'Noto Sans TC', 'Istok Web', 'HelveticaNeue', 'Helvetica Neue', '微軟正黑體', Helvetica, Arial, sans-serif;
+		color: #39394A;
+		font-family: 'OpenHuninn', 'Noto Sans TC', 'Istok Web', 'HelveticaNeue', 'Helvetica Neue', '微軟正黑體', Helvetica, Arial, sans-serif;
 		font-weight: normal; }
 	h1 a, h2 a, h3 a, h4 a, h5 a, h6 a { font-weight: inherit; }
-	h1 { font-size: 46px; line-height: 50px; margin-bottom: 28px;}
-	h2 { font-size: 35px; line-height: 40px; margin-bottom: 20px; }
-	h3 { font-size: 28px; line-height: 34px; margin-bottom: 16px; }
-	h4 { font-size: 21px; line-height: 30px; margin-bottom: 8px; }
+	h1 { font-size: 46px; line-height: 50px; }
+	h2 { font-size: 35px; line-height: 40px; }
+	h3 { font-size: 28px; line-height: 34px; }
+	h4 { font-size: 21px; line-height: 30px; }
 	h5 { font-size: 17px; line-height: 24px; }
-	h6 { font-size: 14px; line-height: 21px; }
+	h6 { font-size: 15px; line-height: 21px; }
 	.subheader { color: #777; }
 
-	h3.title { font-size: 30px; line-height: 34px;
-		font-weight: bold; margin-top: 60px; margin-bottom: 30px; }
-	h3.title-white { color: #fff; font-size: 30px; line-height: 34px;
-		font-weight: bold; margin-top: 60; margin-bottom: 25px; }
+	h2.title, h3.title { font-weight: bold; }
 
-	p { margin: 0 0 25px 0; }
 	p img { margin: 0; }
-	p.lead { font-size: 21px; line-height: 27px; color: #777;  }
-	p.center{ text-align: center; }
+	.lead { font-size: 21px; line-height: 27px; color: #777; }
+	.center { text-align: center; }
+	.caption { font-size: 16px; line-height: 24px; color: #FA494C; }
+	.caption-grey { font-size: 14px; line-height: 22px; color: #63637B; }
 
 	em { font-style: italic; }
 	strong { font-weight: bold; color: #333; }
@@ -101,14 +107,14 @@
 
 
 	.cl-effect-17 a {
-		color: #fff;
+		color: #39394A;
 		opacity: 0.8;
 		text-shadow: none;
 		padding: 10px 0;
 	}
 
 	.cl-effect-17 a::before {
-		color: #fff;
+		color: #39394A;
 		content: attr(data-hover);
 		position: absolute;
 		-webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
@@ -124,7 +130,7 @@
 		bottom: 0;
 		width: 100%;
 		height: 2px;
-		background: #fff;
+		background: #FA494C;
 		opacity: 0;
 		-webkit-transform: translateY(5px);
 		-moz-transform: translateY(5px);
@@ -136,7 +142,7 @@
 	}
 
 	.cl-effect-17 a:hover {
-		color: #fff;
+		color: #FA494C;
 		opacity: 1;
 		-webkit-transition: 0.2s;
 		-moz-transition: 0.2s;
@@ -164,84 +170,41 @@
 ================================================== */
 
 	.intro { 
-		background: #eee; 
+		background: #F5F7FA; 
 		position: relative; 
 		width: 100%; 
-		margin: 0 auto; 
-		padding: 0;
 	}
  	.intro-sector {
  		text-align: center; 
- 		margin: 90px 20px;
- 		visibility: hidden;
- 	}
- 	.animate1, .animate2, .animate3, .animate-rightin {
- 		visibility: hidden;
  	}
 
+	.more-divider {
+		width: 100%;
+		height: fit-content;
+	}
 
-/* #Contact info
+	.more-divider img {
+		width: 100%;
+		height: auto;
+	}
+
+
+/* # fancybox
 ================================================== */
-	.contact-info{
-	}
-	.contact-info h3 {
-		color: #fff !important; 
-	}
-	.contact-info ul {
-		margin-top: 40px;
-		margin-bottom: 80px;
-	}
-	.contact-info ul li {
-		color: #fff;
-		font-size: 20px;
-		line-height: 54px;
-		font-weight: bold;
-		text-align: left;
-		position:relative;
-		bottom: 18px;
-	}
-	.contact-info ul li span {
-		color: #fff;
-		font-size: 12px;
-		line-height: 56px;
-		text-align: left;
-	}
-	.contact-info img {
-		height: 35px;
-		width: 35px;
-		position:relative;
-		top:10px;
-		margin-right: 12px;
-	}
-	.googlemap {
-		text-align: left;
-		visibility: hidden;
-	}
-	.contact-info iframe {
-		margin-top: 60px;
-		margin-bottom: 60px;
-		border: solid 5px #fff;
-		width: 440px;
-		height: 440px;
-	}
-
-
-/* #Contact fancybox
-================================================== */
-	.contact-fancybox {
+	.-fancybox {
 		padding-top: 30px;
 		padding-left: 30px;
 		overflow: hidden;
 		background-color: #ffffff;
 	}
-	.contact-fancybox h3 {
+	.-fancybox h3 {
 		font-weight: bold;
 		margin-bottom: 0;
 	}
-	.contact-fancybox ul {
+	.-fancybox ul {
 		margin-top: 24px;
 	}
-	.contact-fancybox ul li {
+	.-fancybox ul li {
 		color: #888;
 		font-size: 18px;
 		line-height: 38px;
@@ -249,20 +212,20 @@
 		text-align: left;
 		position:relative;
 	}
-	.contact-fancybox ul li span {
+	.-fancybox ul li span {
 		color: #aaa;
 		font-size: 12px;
 		line-height: 40px;
 		text-align: left;
 	}
-	.contact-fancybox img {
+	.-fancybox img {
 		height: 30px;
 		width: 30px;
 		position:relative;
 		top:10px;
 		margin-right: 12px;
 	}
-	.contact-fancybox p {
+	.-fancybox p {
 		margin-top: 15px;
 		font-size: 13px;
 		color: #888;
@@ -275,7 +238,7 @@
 /* #Site map
 ================================================== */
 	.site { 
-		background: #272727; 
+		background: #1B1B24; 
 		position: relative; 
 		width: 100%; 
 		margin: 0 auto; 
@@ -286,43 +249,57 @@
 	h4.sitemap-title {
 		color: #fff;
 		font-weight: bold;
-		text-align: left;
-		margin-bottom: 20px; }
+		text-align: left; }
 	p.sitemap-p {
-		color: #888;
-		font-size: 13px;
+		color: #C8C8DB;
+		font-size: 14px;
 		text-align: left; }
 	.sitemap ul li {
-		color: #888;
-		font-size: 13px;
+		color: #C8C8DB;
+		font-size: 14px;
 		text-align: left; }
 	.sitemap ul li span {
-		color: #888;
+		color: #C8C8DB;
 		padding-left: 5px;
 		float: right;}
 	.sitemap ul li i {
-		color:#1b6fea}
+		color:#C8C8DB}
+	.sitemap-contact li {
+		display: flex;
+		justify-content: space-between;
+	}
+	.sitemap a {
+		color: #C8C8DB;
+	}
+	.sitemap li img {
+		height: 24px;
+		width: 24px;
+		position: relative;
+	}
 	
 
 /* #Footer
 ================================================== */
 	.footer {
-		background-color: #272727;
-		border-top: 1px solid #444;
+		background-color: #1B1B24;
+		border-top: 1px solid rgba(255, 255, 255, 0.1);
 		position: relative; 
 		width: 100%; 
 		margin: 0 auto; 
 		padding: 0; }
 	p.footer-left {
-		color: #999;
-		font-size: 13px;
+		color: #C8C8DB;
+		font-size: 14px;
 		text-align: left;
 		margin: 20px 0; }
 	p.footer-right {
-		color: #999;
-		font-size: 13px;
+		color: #C8C8DB;
+		font-size: 14px;
 		text-align: right;
 		margin: 20px 0; }
+	.footer a {
+		color: #C8C8DB;
+	}
 
 
 
@@ -332,17 +309,18 @@
 ================================================== */
 	.affix {
 		z-index: 9999;
-		background-color: #1b6fea;
+		background-color: #ffffff;
 		position: fixed;
 		top: 0;
 		left: 0;
 		right: 0;
 		opacity: 1;
 		transition: opacity 250ms;
+		border-bottom: #E0E1EB solid 1px;
 	}
 	
 	.affix + div {
-		margin-top: 104px;
+		margin-top: 80px;
 	}
 
 	.affix:hover {
@@ -358,18 +336,16 @@
 		max-width: 100%;
 		height: auto; }
 	img.intro-icon {
-		width: 150px;
-		height: 150px; }
+		width: 100%;
+		height: auto; }
 	img.logo {
-		width: 300px;
-		height: 65px;
+		width: 152px;
+		height: 42px;
 		margin-top: 20px;
 		margin-bottom: 10px; }
 	img.production-line {
-		width: 300px;
-		height: 200px;
-		margin-top: 90px;
-		margin-bottom: 90px;
+		width: 100%;
+		height: auto;
 		visibility: hidden; }
 
 
@@ -377,25 +353,30 @@
 ================================================== */
 
 	.button {
+	background-color: #FA494C;
 	border-radius: 4px;
-	color: #1b6fea;
-	border: 1px solid rgba(27,111,234,0.8);
+	color: #fff;
+	border: 1px solid #FA494C;
 	padding: 6px 40px 6px;
-	font-size: 14px;
+	font-size: 15px;
 	line-height: 30px;
-	width: 160px;
 	text-align: center;
 	text-decoration: none;
 	transition: 250ms;
+	width: fit-content;
     }
 	.button:visited {
-	color: #1b6fea;
+	color: #fff;
 	}
 
 	.button:hover {
-	border-color: #1b6fea;
-	background-color: #1b6fea;
-	color: #fff;
+	border: 1px solid rgba(250, 73, 76, 0.8);
+	border-color: #FA494C;
+	background-color: rgba(250, 73, 76, 0.8);
+	}
+
+	.button i {
+		padding-left: 12px;
 	}
 	
 
@@ -416,7 +397,7 @@
 		-moz-border-radius: 2px;
 		-webkit-border-radius: 2px;
 		border-radius: 2px;
-		font: 13px 'Noto Sans TC', 'Istok Web', 'HelveticaNeue', 'Helvetica Neue', '微軟正黑體', Helvetica, Arial, sans-serif;
+		font: 13px 'OpenHuninn', 'Noto Sans TC', 'Istok Web', 'HelveticaNeue', 'Helvetica Neue', '微軟正黑體', Helvetica, Arial, sans-serif;
 		color: #777;
 		margin: 0;
 		width: 210px;
@@ -461,10 +442,10 @@
 
     @media only screen and (min-width: 768px) and (max-width: 959px) {
 	
-		.contact-info ul li {
+		.-info ul li {
 			font-size: 18px;
 		}
-		.contact-info iframe {
+		.-info iframe {
 			width: 320px;
 			height: 320px;
 		}
@@ -480,6 +461,9 @@
 		.intro-sector {
 			margin: 50px 20px;
 		}
+		img.intro-icon {
+			width: 50%;
+		}
 		p.footer-left {
 			text-align: center;
 		}
@@ -490,7 +474,7 @@
 		.googlemap {
 			text-align: center;
 		}
-		.contact-info iframe {
+		.-info iframe {
 			width: 400px;
 			height: 320px;
 			margin-bottom: -40px;
@@ -507,29 +491,60 @@
 	}
 
 	@media only screen and (max-width: 479px) {
-
-		.intro-sector {
-			margin: 60px 20px;
+		h1 {
+			font-size: 40px;
+			line-height: 48px;
+			}
+		h2 {
+			font-size: 28px;
+			line-height: 40px;
 		}
-		.contact-info iframe {
+		h3 {
+			font-size: 24px;
+			line-height: 32px;
+		}
+		h4 {
+			font-size: 18px;
+			line-height: 28px;
+		}
+		h5 {
+			font-size: 16px;
+			line-height: 22px;
+		}
+		h6 {
+			font-size: 14px;
+			line-height: 20px;
+		}
+		.caption {
+			font-size: 14px;
+			line-height: 20px;
+		}
+		.caption-grey {
+			font-size: 13px;
+			line-height: 19px;
+		}
+		.-info iframe {
 			width: 300px;
 			margin-bottom: -40px;
 		}
-		.contact-info .contact-icon {
+		.-info .-icon {
 			display: none;
 		}
-		.contact-info ul li {
+		.-info ul li {
 			font-size: 16px;
 			line-height: 34px;
 		}
-		.contact-info ul li span {
+		.-info ul li span {
 			line-height: 34px;
 		}
 		img.logo {
-			width: 240px;
-			height: 52px;
-			margin-top: 28px;
+			width: 152px;
+			height: 42px;
+			margin-top: 24px;
 			margin-bottom: 15px;
+		}
+		img.intro-icon {
+			width: 50%;
 		}
 		img.production-line {
 			margin-top: 10px;
@@ -540,20 +555,24 @@
 		.affix + div {
 			margin-top: 0px;
 		}
-		.contact-fancybox {
+		.-fancybox {
 			padding-top: 20px;
 			padding-left: 10px;
 		}
-		.contact-fancybox ul li {
+		.-fancybox ul li {
 			font-size: 14px;
 			line-height: 28px;
 			font-weight: medium;
 		}
-		.contact-fancybox p {
+		.-fancybox p {
 			margin-top: 15px;
 			font-size: 13px;
 			color: #888;
 			overflow: hidden;
+		}
+		.container-section {
+			padding-top: 60px;
+			padding-bottom: 60px;
 		}
 	}
 

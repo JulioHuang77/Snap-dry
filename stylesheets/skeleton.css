@@ -21,15 +21,19 @@
 /* #Base 960 Grid
 ================================================== */
 
-    .container                                  { position: relative; width: 960px; margin: 0 auto; padding: 0; }
-    .container-full                             { position: relative; width: 100%; margin: 0 auto; padding: 0; }
+    .container                                  { position: relative; width: 960px; margin: 0 auto; padding: 0; display: flex; gap: 30px; }
+    .container-block                            { position: relative; width: 100%; margin: 0 auto; padding: 0; }
+    .container-full                             { position: relative; width: 100%; margin: 0 auto; padding: 0; display: flex; gap: 30px; }
     .container .column,
-    .container .columns                         { float: left; display: inline; margin-left: 10px; margin-right: 10px; }
-    .row                                        { margin-bottom: 20px; }
+    .container-full .column,
+    .container-full .columns,
+    .container .columns                         { display: flex; flex-direction: column; }
+    .container .row                             { display: flex; flex-direction: row; }
+    .justify-center                             { justify-content: center;}
 
     /* Nested Column Classes */
-    .column.alpha, .columns.alpha               { margin-left: 0; }
-    .column.omega, .columns.omega               { margin-right: 0; }
+    .column.alpha, .columns.alpha               { padding-left: 0; }
+    .column.omega, .columns.omega               { padding-right: 0; }
 
     /* Base Grid */
     .container .one.column,
@@ -80,10 +84,12 @@
     @media only screen and (min-width: 768px) and (max-width: 959px) {
         .container                                  { width: 768px; }
         .container .column,
-        .container .columns                         { margin-left: 10px; margin-right: 10px;  }
-        .column.alpha, .columns.alpha               { margin-left: 0; margin-right: 10px; }
-        .column.omega, .columns.omega               { margin-right: 0; margin-left: 10px; }
-        .alpha.omega                                { margin-left: 0; margin-right: 0; }
+        .container-full .column,
+        .container-full .columns,
+        .container .columns                         { padding-left: 10px; padding-right: 10px;  }
+        .column.alpha, .columns.alpha               { padding-left: 0; padding-right: 10px; }
+        .column.omega, .columns.omega               { padding-right: 0; padding-left: 10px; }
+        .alpha.omega                                { padding-left: 0; padding-right: 0; }
 
         .container .one.column,
         .container .one.columns                     { width: 28px; }
@@ -131,9 +137,11 @@
     /* Note: Design for a width of 320px */
 
     @media only screen and (max-width: 767px) {
-        .container { width: 300px; }
+        .container { width: 85%; flex-direction: column; gap: 20px; }
         .container .columns,
-        .container .column { margin: 0; }
+        .container-full .column,
+        .container-full .columns,
+        .container .column { flex-direction: column; gap: 20px; }
 
         .container .one.column,
         .container .one.columns,
@@ -153,7 +161,7 @@
         .container .fifteen.columns,
         .container .sixteen.columns,
         .container .one-third.column,
-        .container .two-thirds.column  { width: 300px; }
+        .container .two-thirds.column  { width: 100%; }
 
         /* Offsets */
         .container .offset-by-one,
@@ -190,9 +198,7 @@
     /* Note: Design for a width of 480px */
 
     @media only screen and (min-width: 480px) and (max-width: 767px) {
-        .container { width: 420px; }
-        .container .columns,
-        .container .column { margin: 0; }
+        .container { width: 80%; }
 
         .container .one.column,
         .container .one.columns,
@@ -212,7 +218,7 @@
         .container .fifteen.columns,
         .container .sixteen.columns,
         .container .one-third.column,
-        .container .two-thirds.column { width: 420px; }
+        .container .two-thirds.column { width: 100%; }
     }
 
 

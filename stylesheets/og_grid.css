@@ -32,7 +32,7 @@ html { height: 100%; }
 .og-grid li > a img {
 	height: 225px;
 	width: 225px;
-	background-color: #1b6fea;
+	background-color: #FA494C;
 	border: none;
 	outline: none;
 	display: block;
@@ -195,7 +195,7 @@ html { height: 100%; }
 
 .og-details a {
 	border-radius: 4px;
-	color: #1b6fea;
+	color: #FA494C;
 	border: 1px solid rgba(27,111,234,0.8);
 	padding: 6px 40px 6px;
 	font-size: 14px;
@@ -207,8 +207,8 @@ html { height: 100%; }
 }
 
 .og-details a:hover {
-	border-color: #1b6fea;
-	background-color: #1b6fea;
+	border-color: #FA494C;
+	background-color: #FA494C;
 	color: #fff;
 }
 
